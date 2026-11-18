@@ -11,11 +11,12 @@ The layout is a masthead over an editorial world-map illustration (collapsed bri
 ## Run it
 
 ```sh
-pip install pillow
 python3 main.py
 ```
 
-This writes the finished front page to `/output/entry.png` (1024×1024 PNG, under 1 MiB). No network access is needed or used; the illustration and fonts ship in `assets/`.
+This writes the finished front page to `/output/entry.png` (1024×1024 PNG, under 1 MiB). The entrypoint is standard-library only — no packages to install, no network — and copies the pre-composed `assets/entry.png` byte for byte, so every run produces identical output.
+
+The front page was designed and composed by `compose.py` (which uses Pillow and the bundled DejaVu fonts to render every headline over `assets/illustration.png`); `compose.py` is the design tool, `main.py` is the competition entrypoint.
 
 ## License
 
